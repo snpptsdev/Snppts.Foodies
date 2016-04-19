@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="The World Of Smoothies" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Snppts.Foodies.FoodPage">
+	<ContentPage.Content>
+		<Grid BackgroundColor="#f2f2f4">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="48" />
+				<RowDefinition Height="*" />
+			</Grid.RowDefinitions>
+			<!-- The search bar -->
+			<Grid Grid.Row="0" Padding="0,0,0,1" BackgroundColor="#ceced0">
+				<Grid BackgroundColor="#ffffff">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="48" />
+						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="48" />
+					</Grid.ColumnDefinitions>
+					<Label Text="" FontFamily="FontAwesome" FontSize="16" TextColor="#9d9d9f" HorizontalOptions="Center" VerticalOptions="Center" />
+					<Entry HorizontalTextAlignment="Center" FontFamily="Ubuntu" FontSize="14" PlaceholderColor="#9d9d9f" Placeholder="Search for a smoothie or ingredient" Grid.Column="1" />
+				</Grid>
+			</Grid>
+			<!-- The list view -->
+			<ListView Grid.Row="1" BackgroundColor="Transparent" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" HasUnevenRows="true" ItemsSource="{Binding Smoothies}" CachingStrategy="RecycleElement" SeparatorVisibility="None">
+				<ListView.Header>
+					<StackLayout Padding="0,16,0,14">
+						<Label Text="- LOTS OF SMOOTHIES -" TextColor="#9c9c9e" FontFamily="Ubuntu" FontSize="14" HorizontalOptions="Center" />
+					</StackLayout>
+				</ListView.Header>
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid Padding="8,0,8,10" RowSpacing="0">
+								<Grid Padding="1" BackgroundColor="#e1e1e3" RowSpacing="0">
+									<Grid.RowDefinitions>
+										<RowDefinition Height="192" />
+										<RowDefinition Height="64" />
+									</Grid.RowDefinitions>
+									<Grid Grid.Row="0" Padding="0" BackgroundColor="#e4e4e4">
+										<Image Source="{Binding ImagePath}" />
+									</Grid>
+									<Grid Grid.Row="1" BackgroundColor="#ffffff" RowSpacing="0">
+										<Grid Padding="15" RowSpacing="0">
+											<Grid.RowDefinitions>
+												<RowDefinition Height="15" />
+												<RowDefinition Height="4" />
+												<RowDefinition Height="15" />
+											</Grid.RowDefinitions>
+											<Label Grid.Row="0" Text="{Binding NameToUpper}" FontFamily="Ubuntu-Medium" FontSize="14" TextColor="#3c3947" />
+											<Label Grid.Row="2" Text="{Binding Description}" FontFamily="Ubuntu" FontSize="14" TextColor="#9e9ea0" />
+										</Grid>
+									</Grid>
+								</Grid>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

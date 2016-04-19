@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage BackgroundColor="#e6e6e6" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Snppts.Foodies.HamburgerPage">
+	<ContentPage.Content>
+		<Grid Padding="0">
+			<Image Source="burger.png" HorizontalOptions="Center" VerticalOptions="Center" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>
